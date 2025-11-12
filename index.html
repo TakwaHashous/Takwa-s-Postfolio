@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Takwa Hashous- Cybersecurity Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Montserrat:wght@600;800&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #0a0f0f;
+      color: white;
+      overflow-x: hidden;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+    }
+    header .logo {
+      font-weight: 700;
+      font-size: 1.3rem;
+    }
+    header .logo span {
+      color: #00ff88;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover {
+      color: #00ff88;
+    }
+    .resume-btn {
+      border: 1px solid #00ff88;
+      padding: 6px 16px;
+      border-radius: 6px;
+      color: #00ff88;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .resume-btn:hover {
+      background-color: #00ff88;
+      color: #000;
+    }
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(10,15,15,0.85);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+    .tag {
+      display: inline-block;
+      border: 1px solid #00ff88;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+      color: #00ff88;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin: 0;
+    }
+    .typewriter {
+      font-family: 'Fira Code', monospace;
+      color: #00ff88;
+      font-size: 1.2rem;
+      margin-top: 10px;
+      min-height: 30px;
+    }
+    .hero p {
+      max-width: 600px;
+      margin: 20px auto;
+      font-size: 1.1rem;
+    }
+    .highlight-blue {
+      color: #00bfff;
+    }
+    .highlight-green {
+      color: #00ff88;
+    }
+    .highlight-purple {
+      color: #c678dd;
+    }
+    .buttons {
+      margin-top: 25px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 6px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .btn-green {
+      background: #00ff88;
+      color: #000;
+    }
+    .btn-green:hover {
+      background: #00cc6a;
+    }
+    .btn-outline {
+      border: 1px solid #00ff88;
+      color: white;
+    }
+    .btn-outline:hover {
+      background: #00ff88;
+      color: #000;
+    }
+    .about {
+  padding: 80px 20px;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #00ffb3;
+  margin-bottom: 10px;
+}
+
+.about .subtitle {
+  font-size: 1.1rem;
+  color: #b0b0b0;
+  margin-bottom: 40px;
+}
+
+.about-text {
+  text-align: left;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.highlight-green {
+  color: #00ff88;
+  font-weight: 600;
+}
+
+.highlight-blue {
+  color: #00bfff;
+  font-weight: 600;
+}
+
+.highlight-purple {
+  color: #c678dd;
+  font-weight: 600;
+}
+.stats-edu-career {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.stat-box {
+  background: #111418;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  flex: 1 1 45%;
+  margin: 10px;
+}
+
+.stat-number {
+  font-size: 2rem;
+  color: #00ff88;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.info-card {
+  display: flex;
+  align-items: flex-start;
+  background: #111418;
+  padding: 25px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.card-icon {
+  font-size: 1.8rem;
+  margin-right: 15px;
+}
+
+.card-content h4 {
+  font-size: 1.3rem;
+  color: #00ff88;
+  margin-bottom: 5px;
+}
+
+.card-content .subtitle {
+  color: #b0b0b0;
+  margin-bottom: 8px;
+}
+
+.card-content ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.card-date {
+  position: absolute;
+  right: 20px;
+  top: 25px;
+  color: #00ff88;
+  font-weight: 600;
+}
+.skills {
+  padding: 80px 20px;
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+}
+
+.skills h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #00ffb3;
+  margin-bottom: 10px;
+}
+
+.skills .subtitle {
+  font-size: 1.1rem;
+  color: #b0b0b0;
+  margin-bottom: 50px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+.skill-card {
+  background: #111418;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: left;
+}
+
+.skill-card h3 {
+  color: #00ff88;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+
+.skill-item {
+  margin-bottom: 18px;
+  position: relative;
+}
+
+.skill-item span {
+  font-size: 0.95rem;
+}
+
+.progress-bar {
+  background: #1a1f24;
+  height: 8px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.progress-bar div {
+  height: 8px;
+  background: linear-gradient(90deg, #00ff88, #00bfff);
+}
+
+.percentage {
+  position: absolute;
+  right: 0;
+  top: -2px;
+  font-size: 0.85rem;
+  color: #b0b0b0;
+}
+.contact {
+    background-color: #1E1E1E; /* Dark background */
+    color: #B3B3B3; /* Light gray text */
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.contact h2 {
+    color: #00FF00; /* Green color for headings */
+    margin-bottom: 10px;
+}
+
+.contact-info {
+    margin-top: 15px;
+}
+
+.info-item {
+    margin-bottom: 10px;
+}
+
+.icon {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.info-title {
+    font-weight: bold;
+}
+
+.follow-work {
+    margin-top: 20px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px; /* Space between icons */
+}
+
+.social-icon {
+    font-size: 28px; /* Size for social icons */
+    color: #B3B3B3; /* Light gray for icons */
+    text-decoration: none; /* No underline */
+}
+
+
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo"><span>Takwa</span> Hashous</div>
+    <nav>
+      <a href="#">About</a>
+      <a href="#">Skills</a>
+      <a href="#">Projects</a>
+      <a href="#">Contact</a>
+      <a href="#" class="resume-btn">Resume</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="tag">Cybersecurity Student</div>
+      <h1>Takwa Hashous</h1>
+      <div class="typewriter" id="typewriter"></div>
+      <p>
+        Passionate cybersecurity student specializing in 
+        <span class="highlight-blue">Coding Safety</span>, 
+        <span class="highlight-green">Network Security</span>, and 
+        <span class="highlight-purple">Cloud Security</span>.
+      </p>
+      <div class="buttons">
+        <a href="#" class="btn btn-green">📧 Contact Me</a>
+        <a href="#" class="btn btn-outline">⬇ Download Resume</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const text = "$ whoami:  IOT Enthusiast | Passionate Coder| Cybersecurity & Cloud Learner";
+    let i = 0;
+    function typeWriter() {
+      if (i < text.length) {
+        document.getElementById("typewriter").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 80);
+      }
+    }
+    window.onload = typeWriter;
+  </script>
+  <section class="about" id="about">
+  <h2>About Me</h2>
+  <p class="subtitle">
+    Dedicated to protecting digital assets and building secure systems for tomorrow's challenges
+  </p>
+
+  <div class="about-text">
+    <p>
+      I'm a passionate cybersecurity student with a strong foundation in 
+      <span class="highlight-green">ethical hacking</span>, 
+      <span class="highlight-blue">network security</span>, and 
+      <span class="highlight-purple">digital forensics</span>. 
+      My journey began with a fascination for understanding how systems work and, more importantly, how they can be protected.
+    </p>
+
+    <p>
+      Through hands-on experience with penetration testing, vulnerability assessments, and incident response, 
+      I've developed a comprehensive understanding of both offensive and defensive security strategies. 
+      I believe in the power of ethical hacking to strengthen our digital infrastructure.
+    </p>
+
+    <p>
+      When I'm not diving deep into the latest security research or working on personal projects, 
+      you'll find me contributing to open-source security tools, participating in CTF competitions, 
+      and staying current with emerging threats and defensive techniques.
+    </p>
+  </div>
+</section>
+<section class="stats-edu-career" id="stats">
+  <div class="stats-container">
+    <div class="stat-box">
+      <h3 class="stat-number">5</h3>
+      <p> Projects</p>
+    </div>
+    <div class="stat-box">
+      <h3 class="stat-number">35</h3>
+      <p>Certifications & Badges</p>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="card-icon">🎓</div>
+    <div class="card-content">
+      <h4>Education</h4>
+      <p class="subtitle">Computer Engineering  - IOT & Embedded Systems</p>
+      <p><strong>Higher Institute of Informatics & Communication Technologies of Sousse (ISITCom) </strong></p>
+      <p>Licentiate of Computer Engineering</p>
+      <p>Specialization: IOT & Embedded Systems</p>
+    </div>
+    <div class="card-date">2023-2026</div>
+  </div>
+
+  <div class="info-card">
+    <div class="card-icon">🎯</div>
+    <div class="card-content">
+      <h4>Career Goals</h4>
+      <p class="subtitle">Security Professional</p>
+      <ul>
+        <li>Penetration Tester at a leading security firm</li>
+        <li>Security Research & Threat Intelligence</li>
+        <li>Cybersecurity Consulting & Advisory</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="skills" id="skills">
+  <h2>Technical Arsenal</h2>
+  <p class="subtitle">
+    A comprehensive skillset built through hands-on experience, academic study, and continuous learning in cybersecurity
+  </p>
+
+  <div class="skills-grid">
+
+    <!-- Security Fundamentals -->
+    <div class="skill-card">
+      <h3>Security Fundamentals</h3>
+      <div class="skill-item">
+        <span>Pentesting</span>
+        <div class="progress-bar"><div style="width: 85%"></div></div>
+        <span class="percentage">85%</span>
+      </div>
+      <div class="skill-item">
+        <span>Cryptography</span>
+        <div class="progress-bar"><div style="width: 78%"></div></div>
+        <span class="percentage">78%</span>
+      </div>
+      <div class="skill-item">
+        <span>File Systems</span>
+        <div class="progress-bar"><div style="width: 82%"></div></div>
+        <span class="percentage">82%</span>
+      </div>
+      <div class="skill-item">
+        <span>Social Engineering</span>
+        <div class="progress-bar"><div style="width: 75%"></div></div>
+        <span class="percentage">75%</span>
+      </div>
+    </div>
+
+    <!-- Ethical Hacking -->
+    <div class="skill-card">
+      <h3>Networking</h3>
+      <div class="skill-item">
+        <span>Networks Foundamentales</span>
+        <div class="progress-bar"><div style="width: 88%"></div></div>
+        <span class="percentage">88%</span>
+      </div>
+      <div class="skill-item">
+        <span>Network Security</span>
+        <div class="progress-bar"><div style="width: 85%"></div></div>
+        <span class="percentage">85%</span>
+      </div>
+      <div class="skill-item">
+        <span>Virtual Extensible LAN (VXLAN)</span>
+        <div class="progress-bar"><div style="width: 80%"></div></div>
+        <span class="percentage">80%</span>
+      </div>
+      <div class="skill-item">
+        <span>IOS-XE</span>
+        <div class="progress-bar"><div style="width: 83%"></div></div>
+        <span class="percentage">83%</span>
+      </div>
+    </div>
+
+    <!-- Digital Forensics -->
+    <div class="skill-card">
+      <h3>Programming</h3>
+      <div class="skill-item">
+        <span>Python</span>
+        <div class="progress-bar"><div style="width: 79%"></div></div>
+        <span class="percentage">79%</span>
+      </div>
+      <div class="skill-item">
+        <span>C/C++</span>
+        <div class="progress-bar"><div style="width: 76%"></div></div>
+        <span class="percentage">76%</span>
+      </div>
+      <div class="skill-item">
+        <span>Java</span>
+        <div class="progress-bar"><div style="width: 81%"></div></div>
+        <span class="percentage">81%</span>
+      </div>
+      <div class="skill-item">
+        <span>HTML,CSS, Javascript, PHP</span>
+        <div class="progress-bar"><div style="width: 84%"></div></div>
+        <span class="percentage">84%</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- Tools & Technologies Section -->
+<section class="skills-section">
+  <h2 class="section-title">Tools & Technologies</h2>
+  <div class="skills-grid">
+    <div class="skill-card">Wireshark</div>
+    <div class="skill-card">Metasploit</div>
+    <div class="skill-card">Nmap</div>
+    <div class="skill-card">Arch linux</div>
+    <div class="skill-card">Kali Linux</div>
+    <div class="skill-card">OpenSSl</div>
+    <div class="skill-card">Putty</div>
+    <div class="skill-card">SIEM</div>
+    <div class="skill-card">Python</div>
+    <div class="skill-card">C/C++</div>
+    <div class="skill-card">web dev tools</div>
+    <div class="skill-card">NoSQL</div>
+    <div class="skill-card">SQL</div>
+    <div class="skill-card">Networking</div>
+   
+  </div>
+</section>
+
+<!-- Certifications Section -->
+<section class="skills-section">
+  <h2 class="section-title">Certifications</h2>
+  <div class="skills-grid">
+    <div class="skill-card">ISC2 certified in cybersecurity (in progress)</div>
+    <div class="skill-card">CCNA series 1-4 (in progress)</div>
+    <div class="skill-card">CNIOS</div>
+    <div class="skill-card">AWS Cloud Practitionner (in progress)</div>
+    <div class="skill-card">Foundation Level Threat intelligence Analyst (CTI 101)</div>
+    <div class="skill-card">Microsoft Security, Compliance, and Identity Fundamentals: Describe the concept of security, compliance and identity</div>
+    
+  </div>
+</section>
+
+<!-- CSS (can be merged with your existing style) -->
+<style>
+  .skills-section {
+    margin: 40px 0;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    border-bottom: 2px solid #0ff; /* Matches previous neon style */
+    padding-bottom: 5px;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+  }
+
+  .skill-card {
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid #0ff;
+    padding: 15px;
+    text-align: center;
+    font-size: 1rem;
+    color: #0ff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #0ff;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px #0ff;
+  }
+</style>
+<!-- Security Projects Section -->
+<section class="projects-section">
+  <h2 class="section-title">Projects</h2>
+  <p class="section-subtitle">
+    Hands-on  projects demonstrating practical skills in Networking, Pentesting, and secure development
+  </p>
+
+  <div class="projects-grid">
+
+    <!-- Project 1 -->
+    <div class="project-card">
+      <span class="status completed">Completed</span>
+      <h3>Pre-Medical Diagnostic App</h3>
+      <p>
+        Developed an app using Python and Tkinter that predict what are the possible diseases and given advices and a specialized doctor to go to</p>
+      <h4>Key Features:</h4>
+      <ul>
+        <li>Choosing the  part of the pain of the human body </li>
+        <li>Proposing questions and a free space to show the symptoms</li>
+        <li>Analysing the symptoms and the part of the human body to give advices and possible diseases</li>
+        <li>Proposing one or two doctors to go </li>
+      </ul>
+      <h4>Technologies:</h4>
+      <p class="tech">Python, Tkinter</p>
+      <div class="btn-group">
+        <!--<a href="#" class="btn">Code</a>-->
+        <!--<a href="#" class="btn">Demo</a>-->
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-card">
+      <span class="status completed">In Progress</span>
+      <h3>Authentication Testing Lab</h3>
+      <p>
+        Created a vulnerable web application environment for ethical hacking practice, featuring multiple security flaws including authentication bypasses, accountability and availability.
+      </p>
+      <h4>Key Features:</h4>
+      <ul>
+        <li>OWASP Top 10 vulnerabilities</li>
+        <li>FreeRADIUS and Apache services installation</li>
+        <li>Access the HTTP Server with Basic Authentication</li>
+        <li>Review Accounting Logs</li>
+      </ul>
+      <h4>Technologies:</h4>
+      <p class="tech">RADIUS, Apache, Linux, MySQL</p>
+      <div class="btn-group">
+        <!--<a href="#" class="btn">Code</a>
+        <a href="#" class="btn">Demo</a>-->
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project-card">
+      <span class="status in-progress">Completed</span>
+      <h3>Typing Analytics & Keystroke Visualizer</h3>
+      <p>
+        Built a collection of digital forensics tools for incident response, including file recovery utilities, metadata analysis, and timeline reconstruction capabilities.
+      </p>
+      <h4>Key Features:</h4>
+      <ul>
+        <li>Realtime visualization</li>
+        <li>Timing metrics</li>
+        <li>Anonymous sessions</li>
+        <li>export session summary (CSV)</li>
+      </ul>
+      <h4>Technologies:</h4>
+      <p class="tech">Python, Node/npm, Git, Linux</p>
+      <div class="btn-group">
+       <!--<a href="#" class="btn">Code</a>
+        <a href="#" class="btn">Demo</a>-->
+      </div>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="project-card">
+      <span class="status completed">Completed</span>
+      <h3>Encrypted Communication System</h3>
+      <p>
+        Implemented a secure messaging application with end-to-end encryption, perfect forward secrecy, and secure key exchange protocols for private communications.
+      </p>
+      <h4>Key Features:</h4>
+      <ul>
+        <li>End-to-end encryption</li>
+        <li>Perfect forward secrecy</li>
+        <li>Secure message exchange</li>
+        <li>Message authentication</li>
+      </ul>
+      <h4>Technologies:</h4>
+      <p class="tech">C, AES, RSA, Diffie-Hellman, Socket Programming</p>
+      <div class="btn-group">
+        <!--<a href="#" class="btn">Code</a>
+        <a href="#" class="btn">Demo</a>-->
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CSS -->
+<style>
+.projects-section {
+  margin: 50px 0;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: #bbb;
+  margin-bottom: 30px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background: rgba(0, 0, 0, 0.75);
+  border: 2px solid #0ff;
+  border-radius: 12px;
+  padding: 20px;
+  color: #fff;
+  box-shadow: 0 0 10px #0ff;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px #0ff;
+}
+
+.status {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.completed {
+  background: #00ff88;
+  color: #000;
+}
+
+.in-progress {
+  background: #ffcc00;
+  color: #000;
+}
+
+.project-card h3 {
+  color: #0ff;
+  font-size: 1.4rem;
+  margin: 10px 0;
+}
+
+.project-card h4 {
+  margin-top: 15px;
+  font-size: 1rem;
+  color: #00ff88;
+}
+
+.project-card ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin: 5px 0 15px;
+}
+
+.tech {
+  color: #0ff;
+  font-style: italic;
+}
+
+.btn-group {
+  margin-top: 15px;
+}
+
+.btn {
+  display: inline-block;
+  background: transparent;
+  border: 2px solid #0ff;
+  padding: 6px 14px;
+  margin-right: 10px;
+  border-radius: 6px;
+  color: #0ff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background: #0ff;
+  color: #000;
+}
+</style>
+
+<section class="contact">
+    <h2>Let's Connect</h2>
+    <p>Whether you're looking for a security intern, have a project collaboration in mind, or want to discuss the latest in cybersecurity, I'd love to hear from you.</p>
+    
+    <div class="contact-info">
+        <div class="info-item">
+            <span class="icon email-icon">📧</span>
+            <span class="info-title">Email</span><br>
+            <span class="info-detail">telhashous@gmail.com</span>
+        </div>
+        
+        <div class="info-item">
+            <span class="icon phone-icon">📞</span>
+            <span class="info-title">Phone</span><br>
+            <span class="info-detail">+216 56815126</span>
+        </div>
+
+        <div class="info-item">
+            <span class="icon location-icon">📍</span>
+            <span class="info-title">Location</span><br>
+            <span class="info-detail">Sousse, Tunisia</span>
+        </div>
+    </div>
+
+    <div class="follow-work">
+        <h3>Follow My Work</h3>
+        <div class="social-icons">
+            <a href="https://github.com/" class="social-icon" target="_blank" aria-label="GitHub">
+              <svg height="28" width="28" viewBox="0 0 24 24" fill="#B3B3B3" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;"><path d="M12 2C6.477 2 2 6.484 2 12.021c0 4.428 2.865 8.184 6.839 9.504.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.339-2.221-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.748-1.025 2.748-1.025.546 1.378.202 2.397.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.847-2.337 4.695-4.566 4.944.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.744 0 .267.18.579.688.481C19.138 20.2 22 16.447 22 12.021 22 6.484 17.523 2 12 2z"/></svg>
+            </a>
+           
+            <a href="#" class="social-icon">
+              <svg height="28" width="28" viewBox="0 0 24 24" fill="#B3B3B3" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;">
+               
+              </svg> <a href="https://www.linkedin.com/in/takwa-hashous/" class="social-icon" target="_blank" aria-label="LinkedIn">
+              <svg height="28" width="28" viewBox="0 0 24 24" fill="#B3B3B3" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm15.5 11.268h-3v-5.604c0-1.337-.026-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.841-1.563 3.039 0 3.6 2.001 3.6 4.601v5.595z"/></svg>
+            </a></a>
+                <path d="M12 0C5.373 0 0 5.373 0 12c0 5.304 3.438 9.8 8.205 11.387.6.111.82-.261.82-.577 0-.287-.011-1.045-.016-2.052-3.338.724-4.043-1.607-4.043-1.607-.546-1.384-1.333-1.754-1.333-1.754-1.089-.743.083-.728.083-.728 1.204.085 1.838 1.237 1.838 1.237 1.068 1.831 2.8 1.301 3.48.995.108-.774.418-1.301.76-1.601-2.665-.303-5.466-1.333-5.466-5.933 0-1.313.469-2.386 1.236-3.22-.124-.303-.536-1.53.117-3.185 0 0 1.008-.322 3.301 1.227.957-.266 1.987-.399 3.006-.404 1.018.005 2.048.138 3.006.404 2.293-1.549 3.301-1.227 3.301-1.227.653 1.655.241 2.882.118 3.185.768.834 1.236 1.907 1.236 3.22 0 4.607-2.805 5.63-5.475 5.925.43.371.815 1.102.815 2.222 0 1.606-.014 2.91-.014 3.303 0 .318.218.693.825.577C20.563 21.8 24 17.304 24 12c0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </a>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+</body>
+</html>
